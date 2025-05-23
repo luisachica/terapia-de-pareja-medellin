@@ -1,20 +1,17 @@
 "use client"
 
+import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { PhoneIcon, MapPinIcon, MessageCircle, Instagram, Mail, ArrowRight } from "lucide-react"
-import Image from "next/image"
-import { useState, useEffect } from "react"
 
 export default function Contacto() {
-  // Enlace de WhatsApp
   const whatsappLink = "https://wa.me/573137415861"
   const whatsappNumber = "+57 313 7415861"
   const email = "yolioshe97@gmail.com"
   const instagramUser = "@sinapser"
-
-  // Estado para controlar la animación de entrada
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -22,106 +19,74 @@ export default function Contacto() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-slate-50">
-      {/* Hero Section */}
-      <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden">
-        <Image src="/contactame-hero.png" alt="Contáctame" fill className="object-cover object-center" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center">
-          <div className="container mx-auto px-8">
-            <div
-              className={`transition-all duration-700 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Contáctame
-              </h1>
-              <p className="text-white/90 text-xl max-w-xl">
-                ¿Quieres agendar una cita o tienes alguna pregunta? Estoy aquí para ayudarte.
-              </p>
-            </div>
-          </div>
+    <main className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <div className="relative w-full h-[400px] md:h-[500px] bg-secondary flex items-center">
+        <div className="container mx-auto px-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            Contáctatame
+          </h1>
+          <p className="text-foreground/90 text-xl max-w-xl">
+            ¿Quieres agendar una cita o tienes alguna pregunta? Estoy aquí para ayudarte.
+          </p>
         </div>
       </div>
 
-      {/* Formas decorativas */}
-      <div className="absolute top-[400px] right-0 w-64 h-64 bg-pink-100 rounded-full opacity-20 blur-3xl -z-10"></div>
-      <div className="absolute top-[700px] left-0 w-96 h-96 bg-purple-100 rounded-full opacity-20 blur-3xl -z-10"></div>
+      {/* Fondo decorativo */}
+      <div className="absolute top-[400px] right-0 w-64 h-64 bg-muted rounded-full opacity-20 blur-3xl -z-10" />
+      <div className="absolute top-[700px] left-0 w-96 h-96 bg-muted rounded-full opacity-20 blur-3xl -z-10" />
 
-      {/* Contenido Principal */}
+      {/* Contenido principal */}
       <div className="container mx-auto py-20 px-4 md:px-8 relative">
-        <div
-          className={`text-center mb-16 transition-all duration-700 delay-300 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            <span className="bg-gradient-to-r from-pink-500 to-orange-400 text-transparent bg-clip-text">
-              Diferentes formas
-            </span>{" "}
-            de contactarme
+        <div className={`text-center mb-16 transition-all duration-700 delay-300 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="text-primary">Diferentes formas</span> de contactarme
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-            Elige la opción que te resulte más cómoda para comunicarte conmigo. Estoy disponible para atenderte.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Elige la opción que te resulte más cómoda para comunicarte conmigo.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {/* Primera columna - WhatsApp */}
-          <div
-            className={`bg-white rounded-3xl p-8 shadow-xl border border-slate-100 h-full transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-100 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          >
+          {/* WhatsApp */}
+          <div className={`bg-card rounded-3xl p-8 shadow-xl border border-border h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-100 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-green-400 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
                 <MessageCircle className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-800">Escríbeme a WhatsApp</h2>
+              <h2 className="text-2xl font-semibold">Escríbeme a WhatsApp</h2>
             </div>
-            <div className="border-b border-slate-200 w-full mb-6"></div>
-
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">¿Tienes alguna pregunta? ¡Escríbenos!</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">¡Agenda tu cita!</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">¿Necesitas ayuda? ¡WhatsAppea ahora!</span>
-              </li>
+            <div className="border-b border-border w-full mb-6" />
+            <ul className="space-y-4 mb-8 text-muted-foreground">
+              <li>• ¿Tienes alguna pregunta? ¡Escríbenos!</li>
+              <li>• ¡Agenda tu cita!</li>
+              <li>• ¿Necesitas ayuda? ¡WhatsAppea ahora!</li>
             </ul>
-
-            <Button
-              asChild
-              className="w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white rounded-full py-6 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mb-8 group"
-            >
+            <Button asChild className="w-full bg-accent text-primary-foreground rounded-full py-6 shadow-md hover:shadow-lg transition-all mb-8">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Contáctame
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-
-            <div className="flex items-center gap-3 text-slate-600 justify-center">
-              <MessageCircle className="w-5 h-5 text-green-600" />
+            <div className="flex items-center gap-3 justify-center text-muted-foreground">
+              <MessageCircle className="w-5 h-5 text-primary" />
               <span className="font-medium">@yolanda_osorio</span>
             </div>
           </div>
 
-          {/* Segunda columna - Dirección */}
-          <div
-            className={`bg-white rounded-3xl p-8 shadow-xl border border-slate-100 h-full transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-200 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          >
+          {/* Dirección */}
+          <div className={`bg-card rounded-3xl p-8 shadow-xl border border-border h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-200 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-400 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center text-secondary-foreground shadow-md">
                 <MapPinIcon className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-800">Dirección del consultorio</h2>
+              <h2 className="text-2xl font-semibold">Dirección del consultorio</h2>
             </div>
-            <div className="border-b border-slate-200 w-full mb-6"></div>
-
+            <div className="border-b border-border w-full mb-6" />
             <div className="rounded-xl overflow-hidden mb-8 h-64 relative shadow-md">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2124445750146!2d-75.59324!3d6.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80d7cbf%3A0x42137cfcc7b5e610!2sLaureles%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1715553600000!5m2!1ses!2sco"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.645612847551!2d-75.59324002417458!3d6.244193193754308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80d7cbf%3A0x42137cfcc7b5e610!2sCra.%2073%20%2345f23%20a%2045f%2C%20Laureles%20-%20Estadio%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1716485400000!5m2!1ses!2sco"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -130,108 +95,78 @@ export default function Contacto() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="rounded-xl"
                 title="Ubicación del consultorio"
-              ></iframe>
+              />
+
             </div>
-
-            <div className="space-y-4">
+            <div className="space-y-4 text-muted-foreground">
               <div className="flex items-start gap-3">
-                <MapPinIcon className="w-5 h-5 text-pink-500 flex-shrink-0 mt-1" />
-                <span className="text-slate-600 font-medium">Cra. 73 #45f23 a 45f, Laureles - Estadio, Medellín</span>
+                <MapPinIcon className="w-5 h-5 text-secondary-foreground flex-shrink-0 mt-1" />
+                <span className="font-medium">Cra. 73 #45f23 a 45f, Laureles - Medellín</span>
               </div>
-
-              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-100">
-                <Instagram className="w-5 h-5 text-pink-500" />
-                <span className="text-slate-600 font-medium">{instagramUser}</span>
+              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border">
+                <Instagram className="w-5 h-5 text-secondary-foreground" />
+                <span className="font-medium">{instagramUser}</span>
               </div>
             </div>
           </div>
 
-          {/* Tercera columna - Teléfono */}
-          <div
-            className={`bg-white rounded-3xl p-8 shadow-xl border border-slate-100 h-full transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-300 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          >
+          {/* Teléfono */}
+          <div className={`bg-card rounded-3xl p-8 shadow-xl border border-border h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-300 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-400 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center text-foreground shadow-md">
                 <PhoneIcon className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-800">Mi número de teléfono</h2>
+              <h2 className="text-2xl font-semibold">Mi número de teléfono</h2>
             </div>
-            <div className="border-b border-slate-200 w-full mb-6"></div>
-
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="text-purple-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">¿Prefieres llamarnos?</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-purple-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">Atención personalizada por teléfono</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-purple-500 font-bold text-xl">•</span>
-                <span className="text-slate-600">Estamos para escucharte.</span>
-              </li>
+            <div className="border-b border-border w-full mb-6" />
+            <ul className="space-y-4 mb-8 text-muted-foreground">
+              <li>• ¿Prefieres llamarnos?</li>
+              <li>• Atención personalizada por teléfono</li>
+              <li>• Estamos para escucharte.</li>
             </ul>
-
             <div className="flex justify-center mb-8">
-              <div className="w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center shadow-md">
-                <PhoneIcon className="w-10 h-10 text-purple-600" />
+              <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center shadow-md">
+                <PhoneIcon className="w-10 h-10 text-foreground" />
               </div>
             </div>
-
-            <a
-              href={`tel:${whatsappNumber.replace(/\s+/g, "")}`}
-              className="block text-center text-2xl font-bold text-slate-800 hover:text-purple-500 transition-colors"
-            >
+            <a href={`tel:${whatsappNumber.replace(/\s+/g, "")}`} className="block text-center text-2xl font-bold hover:text-primary transition-colors">
               {whatsappNumber}
             </a>
           </div>
         </div>
 
-        {/* Sección de correo y cita */}
-        <div
-          className={`mt-20 rounded-3xl overflow-hidden shadow-xl transition-all duration-700 delay-400 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-        >
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 py-12 px-8 md:px-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-
-            <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white flex-shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <h2 className="text-2xl font-semibold text-white">Mi correo electrónico:</h2>
+        {/* Correo y cita */}
+        <div className={`mt-20 rounded-3xl overflow-hidden bg-primary text-primary-foreground p-12 transition-all duration-700 delay-400 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-foreground">
+                  <Mail className="w-5 h-5" />
                 </div>
-                <a href={`mailto:${email}`} className="text-2xl text-white hover:underline font-medium ml-14">
-                  {email}
-                </a>
+                <h2 className="text-2xl font-semibold">Mi correo electrónico:</h2>
               </div>
-
-              <div className="text-white">
-                <blockquote className="text-xl italic relative pl-6 border-l-4 border-white/30">
-                  «La única persona que puede hacerte sentir inferior es tú mismo.»
-                  <footer className="mt-2 text-white/80">— Eleanor Roosevelt.</footer>
-                </blockquote>
-              </div>
+              <a href={`mailto:${email}`} className="text-2xl hover:underline font-medium ml-14">
+                {email}
+              </a>
             </div>
+            <blockquote className="text-xl italic relative pl-6 border-l-4 border-border">
+              «La única persona que puede hacerte sentir inferior es tú mismo.»
+              <footer className="mt-2 opacity-80">— Eleanor Roosevelt.</footer>
+            </blockquote>
           </div>
         </div>
 
-        {/* Horarios de atención */}
-        <div
-          className={`mt-20 transition-all duration-700 delay-500 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-        >
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-xl border border-slate-100">
-            <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Horarios de atención</h2>
+        {/* Horarios */}
+        <div className={`mt-20 transition-all duration-700 delay-500 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <div className="max-w-4xl mx-auto bg-card rounded-3xl p-8 shadow-xl border border-border">
+            <h2 className="text-2xl font-semibold mb-6 text-center">Horarios de atención</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="font-medium text-slate-700 mb-4 flex items-center">
-                  <span className="w-3 h-3 bg-pink-500 rounded-full mr-2"></span>
+                <h3 className="font-medium mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-accent rounded-full mr-2"></span>
                   Consultas presenciales
                 </h3>
-                <ul className="space-y-2 text-slate-600 ml-5">
+                <ul className="space-y-2 text-muted-foreground ml-5">
                   <li className="flex justify-between">
                     <span>Lunes a Viernes:</span>
                     <span className="font-medium">8:00 AM - 6:00 PM</span>
@@ -247,11 +182,11 @@ export default function Contacto() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-slate-700 mb-4 flex items-center">
-                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                <h3 className="font-medium mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-muted rounded-full mr-2"></span>
                   Consultas virtuales
                 </h3>
-                <ul className="space-y-2 text-slate-600 ml-5">
+                <ul className="space-y-2 text-muted-foreground ml-5">
                   <li className="flex justify-between">
                     <span>Lunes a Viernes:</span>
                     <span className="font-medium">7:00 AM - 8:00 PM</span>
@@ -270,65 +205,40 @@ export default function Contacto() {
           </div>
         </div>
 
-        {/* Formulario de contacto */}
-        <div
-          className={`mt-20 transition-all duration-700 delay-600 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-        >
-          <h2 className="text-3xl font-bold text-slate-800 mb-10 text-center">
-            Envíame un{" "}
-            <span className="bg-gradient-to-r from-pink-500 to-orange-400 text-transparent bg-clip-text">mensaje</span>
+        {/* Formulario */}
+        <div className={`mt-20 transition-all duration-700 delay-600 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            Envíame un <span className="text-primary">mensaje</span>
           </h2>
-
-          <div className="max-w-2xl mx-auto bg-white rounded-3xl p-10 shadow-xl border border-slate-100 transform transition-all duration-300 hover:shadow-2xl">
+          <div className="max-w-2xl mx-auto bg-card rounded-3xl p-10 shadow-xl border border-border">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="nombre" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="nombre" className="block text-sm font-medium mb-2">
                     Nombre
                   </label>
-                  <Input
-                    id="nombre"
-                    placeholder="Tu nombre"
-                    className="rounded-xl py-6 border-slate-200 focus:border-pink-300 focus:ring-pink-200"
-                  />
+                  <Input id="nombre" placeholder="Tu nombre" className="rounded-xl py-6" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email
                   </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Tu email"
-                    className="rounded-xl py-6 border-slate-200 focus:border-pink-300 focus:ring-pink-200"
-                  />
+                  <Input id="email" type="email" placeholder="Tu email" className="rounded-xl py-6" />
                 </div>
               </div>
               <div>
-                <label htmlFor="asunto" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="asunto" className="block text-sm font-medium mb-2">
                   Asunto
                 </label>
-                <Input
-                  id="asunto"
-                  placeholder="Asunto del mensaje"
-                  className="rounded-xl py-6 border-slate-200 focus:border-pink-300 focus:ring-pink-200"
-                />
+                <Input id="asunto" placeholder="Asunto del mensaje" className="rounded-xl py-6" />
               </div>
               <div>
-                <label htmlFor="mensaje" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="mensaje" className="block text-sm font-medium mb-2">
                   Mensaje
                 </label>
-                <Textarea
-                  id="mensaje"
-                  placeholder="Tu mensaje"
-                  rows={5}
-                  className="rounded-xl border-slate-200 focus:border-pink-300 focus:ring-pink-200"
-                />
+                <Textarea id="mensaje" placeholder="Tu mensaje" rows={5} className="rounded-xl" />
               </div>
-              <Button
-                asChild
-                className="w-full bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white rounded-full py-6 shadow-md hover:shadow-lg transition-all mt-4 group"
-              >
+              <Button asChild className="w-full bg-accent text-primary-foreground rounded-full py-6 mt-4 shadow-md hover:shadow-lg transition-all">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Enviar Mensaje
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
