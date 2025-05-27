@@ -15,7 +15,7 @@ export default function HeroSection() {
 
             <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
               <span className="block">Yolanda</span>
-              <span className="block bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
+              <span className="block bg-gradient-to-r from-primary-foreground to-accent text-transparent bg-clip-text">
                 Osorio
               </span>
             </h1>
@@ -33,7 +33,7 @@ export default function HeroSection() {
               <div>
                 <h2 className="text-2xl font-semibold text-foreground mb-2">Terapia de Pareja Medellín</h2>
                 <p className="text-muted-foreground">
-                  He visto muchas parejas al borde de rendirse… y también he sido testigo de nuevas formas de amarse.
+                  «He visto muchas parejas al borde de rendirse… y también he sido testigo de nuevas formas de amarse.»
 
                 </p>
               </div>
@@ -42,7 +42,7 @@ export default function HeroSection() {
             <div className="pt-4">
               <Button
                 asChild
-                className="bg-accent text-primary-foreground hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
+                className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
               >
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Descubre cómo

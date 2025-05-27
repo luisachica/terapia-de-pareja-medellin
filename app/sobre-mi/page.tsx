@@ -13,16 +13,30 @@ export default function SobreMi() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <div className="relative w-full h-[400px] md:h-[500px] bg-secondary flex items-center">
-        <div className="container mx-auto px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Conoce un poco más sobre mí
-          </h1>
-          <p className="text-foreground/90 text-xl max-w-xl">
-            "Mi pasión por la psicología nace de mi deseo de conectar con las personas a un nivel profundo y ayudarles
-            a encontrar significado y propósito en sus vidas. Creo en el poder de la relación terapéutica para
-            fomentar el crecimiento y el cambio positivo."
-          </p>
+      <div className="relative w-full bg-secondary">
+        <div className="container mx-auto px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+          {/* Columna izquierda: texto */}
+          <div className="w-full md:w-[60%]">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Conoce un poco más sobre mí, <br />
+            </h1>
+            <p className="text-foreground/90 text-xl max-w-xl">
+               «He acompañado a muchas parejas que estaban a punto de rendirse… y las he visto volver a mirarse con amor, desde un lugar más real y profundo»
+            </p>
+          </div>
+
+          {/* Columna derecha: imagen */}
+          <div className="w-full md:w-[40%]">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[1/1] bg-muted">
+              <Image
+                src="/images/sobre-mi.jpg"
+                alt="Sobre mí - Yolanda Osorio"
+                width={600}
+                height={750}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -31,7 +45,7 @@ export default function SobreMi() {
       <div className="container mx-auto py-16 px-4 md:px-8">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-12 leading-tight py-6">
           Soy psicóloga profesional con énfasis en{" "}
-          <span className="bg-primary text-transparent bg-clip-text block mt-2">
+          <span className="bg-primary-foreground text-transparent bg-clip-text block mt-2">
             Terapia de Pareja, Sexualidad y Trauma
           </span>
         </h1>
@@ -41,7 +55,7 @@ export default function SobreMi() {
             <div className="bg-card rounded-3xl p-8 shadow-lg border border-border">
               <h2 className="text-2xl font-semibold text-foreground mb-4">Mi enfoque terapéutico</h2>
               <p className="text-muted-foreground mb-4">
-                <strong className="text-accent-foreground">
+                <strong className="text-primary-foreground">
                   Como psicóloga especializada en terapia de pareja y trauma, mi objetivo es acompañarte a ti y a tu
                   pareja en la construcción de una relación más sana y satisfactoria.
                 </strong>
@@ -72,6 +86,10 @@ export default function SobreMi() {
                   "Diplomada en Psicología Clínica de la Sexualidad. Líderes Latinoamérica",
                   "Diplomatura en Estrategias de Intervención en Trauma. Centro Gestáltico de Medellín",
                   "Psicóloga Universidad Católica de Oriente",
+                  "TFE (Terapia Focalizada en Emociones para parejas) nivel 1 Externship",
+                  "TFE (Terapia Focalizada en Emociones para parejas) Nivel 2 Core Skills"
+
+                  
                 ].map((texto, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent-foreground mt-0.5 flex-shrink-0" />
@@ -94,7 +112,7 @@ export default function SobreMi() {
             <div className="pt-4">
               <Button
                 asChild
-                className="bg-accent text-primary-foreground hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
+                className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
               >
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Contáctame
@@ -115,10 +133,9 @@ export default function SobreMi() {
                 />
               </div>
               <h2 className="text-2xl font-semibold text-foreground mb-2">Yolanda Osorio</h2>
-              <p className="text-xl text-accent-foreground mb-6">Psicóloga y Terapeuta</p>
+              <p className="text-xl text-primary-foreground mb-6">Psicóloga y Terapeuta</p>
               <p className="text-muted-foreground italic">
-                "Mi pasión es facilitar el cambio positivo en la vida de las personas. Con empatía y profesionalismo, te
-                acompañaré en tu camino hacia una vida más plena y satisfactoria."
+                «Tu relación merece   autenticidad conexión, evolución y ¿por qué no? otra oportunidad»
               </p>
 
               <div className="mt-8 flex justify-center">
@@ -220,7 +237,7 @@ export default function SobreMi() {
                     <div>
                       <h4 className="font-medium text-accent-foreground mb-2">Aceptación incondicional</h4>
                       <p className="text-muted-foreground">
-                        Aprende a practicar la aceptación incondicional tanto hacia ti mismo como hacia tu pareja. Descubre cómo el amor genuino y la comprensión pueden transformar tu relación.                      
+                        Aprende a practicar la aceptación incondicional tanto hacia ti mismo como hacia tu pareja. Descubre cómo el amor genuino y la comprensión pueden transformar tu relación.
                       </p>
                     </div>
                     <div>
@@ -229,7 +246,7 @@ export default function SobreMi() {
                         Exploraremos la importancia de ser auténticos y genuinos en nuestra relación. Descubre cómo honrar tus verdaderos seres puede crear un espacio para la conexión y la intimidad verdadera.
                       </p>
                     </div>
-                      
+
                     <div>
                       <h4 className="font-medium text-accent-foreground mb-2">Manejo de expectativas</h4>
                       <p className="text-muted-foreground">

@@ -6,15 +6,15 @@
   :root {
     /* === Modo Claro === */
     --background: 0 0% 100%;                 /* Blanco puro */
-    --foreground: 225 12% 40%;              /* Gris azulado oscuro */
+    --foreground: 217 33% 18%;              /* Gris oscuro */
 
     --primary: 220 100% 78%;                /* Azul cielo claro */
-    --primary-foreground: 225 32% 17%;      /* Azul petróleo oscuro */
+    --primary-foreground: 332 81% 61%;      /* Rosado */
 
     --secondary: 204 100% 97%;              /* Azul pastel muy claro */
     --secondary-foreground: 320 81% 62%;    /* Rosa chicle o rosa fuerte */
 
-    --accent: 12 100% 83%;                  /* Coral suave / salmón claro */
+    --accent: 22 92% 54%;                  /* Coral suave / salmón claro */
     --accent-foreground: 12 100% 35%;       /* Coral oscuro / rojo anaranjado */
 
     --destructive: 0 79% 70%;               /* Rojo suave */

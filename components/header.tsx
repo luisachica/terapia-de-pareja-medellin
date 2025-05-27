@@ -13,7 +13,7 @@ export function Header() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center mr-4">
                         <div className="font-bold flex items-center text-foreground">
-                            <span className="text-2xl md:text-3xl mr-2 bg-primary text-transparent bg-clip-text">YO</span>
+                            <span className="text-2xl md:text-3xl mr-2 bg-gradient-to-r from-primary-foreground to-accent text-transparent bg-clip-text">YO</span>
                             <span className="text-sm md:text-lg leading-tight">
                                 YOLANDA
                                 <br />
@@ -27,19 +27,19 @@ export function Header() {
                     <nav className="hidden md:flex items-center space-x-12">
                         <Link
                             href="/"
-                            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
                         >
                             Home
                         </Link>
                         <Link
                             href="/sobre-mi"
-                            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
                         >
                             Sobre mí
                         </Link>
                         <Link
                             href="/contacto"
-                            className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
                         >
                             Contacto
                         </Link>
@@ -61,7 +61,7 @@ export function Header() {
                         {/* CTA botón */}
                         <Button
                             asChild
-                            className="bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground rounded-full px-6 py-2 text-sm md:text-base shadow-md hover:shadow-lg transition-all"
+                            className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
                         >
                             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                                 Agenda tu cita

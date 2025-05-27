@@ -21,16 +21,33 @@ export default function Contacto() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <div className="relative w-full h-[400px] md:h-[500px] bg-secondary flex items-center">
-        <div className="container mx-auto px-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Contáctatame
-          </h1>
-          <p className="text-foreground/90 text-xl max-w-xl">
-            ¿Quieres agendar una cita o tienes alguna pregunta? Estoy aquí para ayudarte.
-          </p>
+      <div className="relative w-full bg-secondary">
+        <div className="container mx-auto px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+          {/* Columna izquierda: texto */}
+          <div className="w-full md:w-[60%]">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Contáctatame
+            </h1>
+            <p className="text-foreground/90 text-xl max-w-xl">
+              ¿Quieres agendar una cita o tienes alguna pregunta? Estoy aquí para ayudarte.
+            </p>
+          </div>
+
+          {/* Columna derecha: imagen */}
+          <div className="w-full md:w-[40%]">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[1/1] bg-muted">
+              <Image
+                src="/images/contacto-yolanda.png"
+                alt="Contacto hero"
+                width={600}
+                height={750}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
+
 
       {/* Fondo decorativo */}
       <div className="absolute top-[400px] right-0 w-64 h-64 bg-muted rounded-full opacity-20 blur-3xl -z-10" />
@@ -40,7 +57,7 @@ export default function Contacto() {
       <div className="container mx-auto py-20 px-4 md:px-8 relative">
         <div className={`text-center mb-16 transition-all duration-700 delay-300 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-primary">Diferentes formas</span> de contactarme
+            <span className="text-primary-foreground">Diferentes formas</span> de contactarme
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Elige la opción que te resulte más cómoda para comunicarte conmigo.
@@ -62,19 +79,14 @@ export default function Contacto() {
               <li>• ¡Agenda tu cita!</li>
               <li>• ¿Necesitas ayuda? ¡WhatsAppea ahora!</li>
             </ul>
-            <Button asChild className="w-full bg-accent text-primary-foreground rounded-full py-6 shadow-md hover:shadow-lg transition-all mb-8">
+            <Button asChild className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Contáctame
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <div className="flex items-center gap-3 justify-center text-muted-foreground">
-              <MessageCircle className="w-5 h-5 text-primary" />
-              <span className="font-medium">@yolanda_osorio</span>
-            </div>
           </div>
-
           {/* Dirección */}
           <div className={`bg-card rounded-3xl p-8 shadow-xl border border-border h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 delay-200 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
@@ -136,7 +148,7 @@ export default function Contacto() {
         </div>
 
         {/* Correo y cita */}
-        <div className={`mt-20 rounded-3xl overflow-hidden bg-primary text-primary-foreground p-12 transition-all duration-700 delay-400 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+        <div className={`mt-20 rounded-3xl overflow-hidden bg-primary text-foreground p-12 transition-all duration-700 delay-400 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-4 mb-4">
@@ -150,8 +162,8 @@ export default function Contacto() {
               </a>
             </div>
             <blockquote className="text-xl italic relative pl-6 border-l-4 border-border">
-              «La única persona que puede hacerte sentir inferior es tú mismo.»
-              <footer className="mt-2 opacity-80">— Eleanor Roosevelt.</footer>
+              «Volver a sentir, entenderse y elegir(se) es posible.»
+
             </blockquote>
           </div>
         </div>
@@ -208,7 +220,7 @@ export default function Contacto() {
         {/* Formulario */}
         <div className={`mt-20 transition-all duration-700 delay-600 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
           <h2 className="text-3xl font-bold mb-10 text-center">
-            Envíame un <span className="text-primary">mensaje</span>
+            Envíame un <span className="text-primary-foreground">mensaje</span>
           </h2>
           <div className="max-w-2xl mx-auto bg-card rounded-3xl p-10 shadow-xl border border-border">
             <form className="space-y-6">
@@ -238,7 +250,7 @@ export default function Contacto() {
                 </label>
                 <Textarea id="mensaje" placeholder="Tu mensaje" rows={5} className="rounded-xl" />
               </div>
-              <Button asChild className="w-full bg-accent text-primary-foreground rounded-full py-6 mt-4 shadow-md hover:shadow-lg transition-all">
+              <Button asChild className="w-full bg-gradient-to-r from-primary-foreground to-accent text-white rounded-full py-6 mt-4 shadow-md hover:shadow-lg transition-all">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Enviar Mensaje
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

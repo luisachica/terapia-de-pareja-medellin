@@ -10,7 +10,7 @@ export default function MetodologiaSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="bg-primary text-transparent bg-clip-text">
+              <span className="bg-primary-foreground text-transparent bg-clip-text">
                 Mi metodología
               </span>{" "}
               se basa en 4 niveles
@@ -28,7 +28,7 @@ export default function MetodologiaSection() {
             <div className="mt-8">
               <Button
                 asChild
-                className="bg-accent text-primary-foreground hover:opacity-90 rounded-full px-8 py-6 shadow-md hover:shadow-lg transition-all"
+                className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
               >
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Conoce más

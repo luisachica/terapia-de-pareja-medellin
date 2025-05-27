@@ -69,7 +69,7 @@ export default function TestimoniosSection() {
       <div className="container mx-auto px-8 ">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            <span className="bg-primary text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary-foreground to-accent bg-clip-text text-transparent">
               Pacientes satisfechos
             </span>
           </h2>

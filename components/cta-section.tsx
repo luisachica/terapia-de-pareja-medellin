@@ -12,9 +12,9 @@ export default function CtaSection() {
         <div className="max-w-4xl mx-auto bg-card rounded-3xl shadow-xl overflow-hidden">
           <div className="grid md:grid-cols-2">
             {/* Lado izquierdo con fondo degradado */}
-            <div className="py-8 px-6 sm:px-10 md:py-12 md:px-12 bg-primary text-primary-foreground">
+            <div className="py-8 px-6 sm:px-10 md:py-12 md:px-12 bg-primary text-foreground">
               <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Listo para fortalecer tu relación?</h2>
-              <p className="mb-8 text-primary-foreground/90">
+              <p className="mb-8 text-foreground/90">
                 Da el primer paso hacia una relación más saludable y satisfactoria. Agenda tu cita hoy mismo.
               </p>
               <div className="space-y-6">
@@ -37,7 +37,7 @@ export default function CtaSection() {
               <div className="space-y-4">
                 <Button
                   asChild
-                  className="w-full bg-accent text-primary-foreground hover:opacity-90 rounded-full py-6 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full py-6 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
                 >
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <Calendar className="w-5 h-5 mr-2" />

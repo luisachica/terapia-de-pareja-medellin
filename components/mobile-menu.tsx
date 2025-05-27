@@ -30,21 +30,21 @@ export default function MobileMenu() {
         <nav className="flex flex-col gap-8 mt-12">
           <Link
             href="/"
-            className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
             onClick={() => setOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/sobre-mi"
-            className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
             onClick={() => setOpen(false)}
           >
             Sobre mí
           </Link>
           <Link
             href="/contacto"
-            className="text-xl font-medium text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-primary-foreground transition-colors font-medium"
             onClick={() => setOpen(false)}
           >
             Contacto
@@ -52,7 +52,7 @@ export default function MobileMenu() {
 
           <Button
             asChild
-            className="bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground rounded-full px-6 py-3 md:px-8 md:py-4 text-sm md:text-base shadow-md hover:shadow-lg transition-all mt-4 text-center"
+            className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
             onClick={() => setOpen(false)}
           >
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">

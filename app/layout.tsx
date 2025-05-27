@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
-
+import Footer from "../components/Footer"
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
 
 export const metadata: Metadata = {
@@ -16,8 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className="scroll-smooth">
       <body className={`${outfit.className} bg-background text-foreground`}>
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
 }
+
+

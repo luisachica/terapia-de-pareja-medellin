@@ -9,8 +9,8 @@ export default function ServicesSection() {
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            <span className="text-primary">
-              Lo qué te puedo brindar
+            <span className="bg-gradient-to-r from-primary-foreground to-accent bg-clip-text text-transparent">
+              Lo que te puedo brindar
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -22,7 +22,7 @@ export default function ServicesSection() {
         <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
           <Button
             asChild
-            className="bg-accent  text-primary-foreground hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
+            className="bg-gradient-to-r from-primary-foreground to-accent text-white hover:opacity-90 rounded-full px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
           >
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               Agenda tu cita presencial
@@ -72,7 +72,7 @@ export default function ServicesSection() {
               className="rounded-full border-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground transition-all"
             >
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              Conoce más
+                Conoce más
               </a>
             </Button>
           </div>
