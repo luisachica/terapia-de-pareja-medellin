@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -31,6 +33,54 @@ export function Header() {
                         >
                             Home
                         </Link>
+                        <div className="relative group">
+                            <div className="flex items-center gap-1 text-foreground hover:text-primary-foreground transition-colors font-medium cursor-pointer">
+                                Servicios
+                                <svg
+                                    className="w-4 h-4 transform group-hover:rotate-180 transition-transform"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+
+                            {/* Contenedor con padding para evitar cierre rápido */}
+                            <div className="absolute top-full left-0 pt-4 z-50">
+                                <div className="bg-white border border-border rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 w-64"
+                                    onMouseEnter={(e) => e.currentTarget.classList.add("pointer-events-auto")}
+                                    onMouseLeave={(e) => e.currentTarget.classList.remove("pointer-events-auto")}>
+                                    <ul className="py-2">
+                                        <li>
+                                            <Link
+                                                href="/consultas-de-pareja"
+                                                className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
+                                            >
+                                                Consultas de pareja
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/asesorias-de-pareja"
+                                                className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
+                                            >
+                                                Asesorías de pareja
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/talleres-de-pareja"
+                                                className="block px-5 py-3 text-sm text-foreground hover:bg-primary hover:text-white transition-colors"
+                                            >
+                                                Talleres de pareja
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <Link
                             href="/sobre-mi"
                             className="text-foreground hover:text-primary-foreground transition-colors font-medium"

@@ -43,7 +43,7 @@ export default function ServicesSection() {
             <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-muted transition-colors">
               <Users className="w-8 h-8 text-secondary-foreground" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4 ">Consulta de pareja</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-4 ">Asesorias de pareja</h3>
             <p className="text-muted-foreground mb-6">
               Sesiones personalizadas para mejorar la comunicación y resolver conflictos en tu relación.
             </p>
@@ -52,7 +52,7 @@ export default function ServicesSection() {
               variant="outline"
               className="rounded-full border-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground transition-all"
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href="asesorias-de-pareja" target="_blank" rel="noopener noreferrer">
                 Conoce más
               </a>
             </Button>
@@ -71,7 +71,7 @@ export default function ServicesSection() {
               variant="outline"
               className="rounded-full border-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground transition-all"
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href="talleres-de-pareja" target="_blank" rel="noopener noreferrer">
                 Conoce más
               </a>
             </Button>
@@ -81,7 +81,7 @@ export default function ServicesSection() {
             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-muted transition-colors">
               <Calendar className="w-8 h-8 text-primary-foreground" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Asesorías de pareja</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-4">Consultas de pareja</h3>
             <p className="text-muted-foreground mb-6">
               Orientación profesional para situaciones específicas que requieren atención inmediata.
             </p>
@@ -90,7 +90,7 @@ export default function ServicesSection() {
               variant="outline"
               className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href="consultas-de-pareja" target="_blank" rel="noopener noreferrer">
                 ¡Conoce más!
               </a>
             </Button>
